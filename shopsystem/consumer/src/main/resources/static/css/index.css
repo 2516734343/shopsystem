@@ -1,0 +1,208 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+.wrapper{
+    width: 100%;
+    height: 100%;
+}
+.wrapper .header{
+    width: 100%;
+    height: 70px;
+    background-color: #6b9cde;
+
+}
+.header .logo{
+    width: 62px;
+    height: 62px;
+    float: left;
+    padding-top: 5px;
+    padding-left: 5px;
+}
+.header .logo img{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+.header h4{
+    color: #ffff;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 70px;
+    float: left;
+    margin-left: 42px
+}
+.wrapper .leftMenu{
+    float: left;
+    width: 128px;
+    height: 800px;
+    background-color: #4b72a4;
+}
+.wrapper .leftMenu ul{
+    width: 100%;
+    height: 233px;
+    display: flex;
+    flex-direction: column;
+}
+.leftMenu ul li{
+    width: 100%;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffff;
+    border-bottom: 1px solid #ddd;
+}
+.active{
+    background-color: #A0CDF7;
+}
+.rightContent{
+    position: absolute;
+    left: 144px;
+    top: 100px;
+    width: calc(100% - 128px);
+    height: calc(100% - 70px);
+}
+.rightContent #goods{
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+#goods.content{
+    display: block;
+}
+.search{
+    width: 210px;
+    height: auto;
+
+}
+.search button{
+    width: 55px;
+    height: 40px;
+    background-color: #6ab8f7;
+    color: #fff;
+    border: none;
+    border-radius: 5px
+}
+/*.addGoods{*/
+/*    display: none;*/
+/*}*/
+.box{
+    width: 100%;
+    height: auto;
+}
+.box table{
+    width: 100%;
+}
+/*.box table thead{*/
+/*    background-color: #6ab8f7;*/
+/*}*/
+.box table tbody td{
+    text-align: center;
+}
+.btn{
+    border-radius: 5px;
+    border: none;
+    margin-left: 5px;
+    color: #fff;
+    width: 48px;
+    height: 30px;
+}
+.edit{
+    background-color: #3c8b3c;
+}
+.del{
+    background-color: #d84f4b;
+}
+.addToCar{
+    width: 80px;
+    background-color: #6ab8f7;
+}
+/* 编辑弹框样式  弹出框占满整个窗口 */
+ .modal,.add-modal{
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    display: none;
+}
+/* 遮罩层沾满整个窗口  position可为fixed 也可为absolute  为absolute的原因是父级所在位置就是整个窗口所以与fixed效果一致
+
+*/
+ .mask ,.add-mask{
+    position:  fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+ .modal-content,.add-modal-content{
+     width: 500px;
+     height: auto;
+ }
+/* 编辑弹窗内容区  不需要加z-index的原因是 mask在modal-content的上面  同时设置position值的时候z-index层级相同 谁在后面谁在上 */
+.modal-content,.add-modal-content{
+    background-color: #fff;
+    width: 500px;
+    /*height: 450px;*/
+    height: auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -250px;
+    margin-top: -225px;
+}
+.add-modal-content{
+    top: 40%;
+}
+ .modal-content h3,
+ .add-modal-content h3{
+    color: #000;
+    text-indent: 2em;
+    text-align: center;
+     margin-top: 30px;
+    /* padding-left: 20px; */
+}
+
+.modal-content form,
+.add-modal-content form{
+    margin-top: 10px;
+    margin-left: 100px;
+}
+.modal-content form input,
+.add-modal-content form input{
+    margin-top: 30px;
+    height: 30px;
+}
+#add-submit-btn,#edit-submit-btn{
+    width: 197px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 5px;
+    background-color: #6ab8f7;
+}
+#goodsType{
+    width: 90%;
+    height: 100%;
+    display: none;
+}
+ .addBtn{
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    background-color: #6ab8f7;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+ #updateOrderStatus{
+     width: 90px;
+ }

@@ -1,0 +1,17 @@
+server:
+  port: 8182
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8764/eureka/
+
+spring:
+  application:
+    name: provider
+  datasource:
+    url: jdbc:mysql://localhost:3308/shopsystem?autoReconnect=true&amp;autoReconnectForPools=true
+    user_name: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+

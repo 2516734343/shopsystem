@@ -1,0 +1,25 @@
+server:
+  port: 9091
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8764/eureka/
+
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: consumer
+  mvc:
+    view:
+      # 页面默认前缀目录
+      prefix: /jsp/
+      # 响应页面默认后缀
+      suffix: .jsp
+
+feign:
+  hystrix:
+    enabled: true
+  httpclient:
+    enabled: true

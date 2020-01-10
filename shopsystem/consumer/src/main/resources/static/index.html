@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./css/index.css">
+
+</head>
+<body>
+<div class="wrapper">
+    <div class="header">
+        <div class="logo">
+            <img src="./img/logo.jpg" alt="">
+        </div>
+        <h4>小辣椒店铺~</h4>
+    </div>
+    <div class="leftMenu">
+        <ul id="menu-list">
+            <li data-id="goods" class="active">我的宝贝</li>
+            <li data-id="goodsType">宝贝分类</li>
+            <li data-id="myCar">我的购物车</li>
+            <li data-id="myOrder">我的订单</li>
+            <li data-id="orderDetail">订单状态</li>
+            <li data-id="userInfo">用户信息</li>
+        </ul>
+    </div>
+    <div class="rightContent">
+<!--        我的宝贝-->
+        <div id="goods" class="content">
+
+<!--                <input type="search" id="search" value="" placeholder="请输入商品id">-->
+                <button class="addBtn">增加商品</button>
+                    <div class="add-modal">
+                        <!-- 遮罩层 -->
+                        <div class="add-mask" ></div>
+                        <!-- 增加商品信息 -->
+                        <div class="add-modal-content" >
+                            <h3>增加商品</h3>
+                            <form class="add-form-1">
+                                <div>
+                                    <label for="">商品编号</label>
+                                    <input type="text" name="goodsid">
+                                </div>
+                                <div>
+                                    <label for="">商品名称</label>
+                                    <input type="text" name="goodsname">
+                                </div>
+                                <div>
+                                    <label for="">商品种类</label>
+                                    <input type="text" name="goodstype">
+                                </div>
+                                <div>
+                                    <label for="">商品售价</label>
+                                    <input type="text" name="goodssellprice">
+                                </div>
+                                <div>
+                                    <label for="">商品进价</label>
+                                    <input type="text" name="goodsinputprice">
+                                </div>
+                                <div>
+                                    <label for="">商品总量</label>
+                                    <input type="text" name="goodsallnumber">
+                                </div>
+                                <div>
+                                    <label for="">商品余量</label>
+                                    <input type="text" name="goodsleftnumber">
+                                </div>
+                                <div>
+                                    <label for=""></label>
+                                    <input type="submit" class="btn" id="add-submit-btn"/>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+            <div class="box">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>商品id</th>
+                            <th>商品名称</th>
+                            <th>商品种类</th>
+                            <th>商品售价</th>
+                            <th>商品进价</th>
+                            <th>商品总量</th>
+                            <th>商品余量</th>
+                            <th>操作商品</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody"></tbody>
+                </table>
+                <div class="modal" id="modal">
+                    <!-- 遮罩层 -->
+                    <div class="mask" id="mask"></div>
+                    <!-- 编辑内容区 -->
+                    <div class="modal-content">
+                        <h3>编辑信息</h3>
+                        <form id="edit-form" action="/goodsInfo/updateByPrimaryKey">
+                            <div>
+                                <label for="">商品编号</label>
+                                <input type="text" name="goodsid">
+                            </div>
+                            <div>
+                                <label for="">商品名称</label>
+                                <input type="text" name="goodsname">
+                            </div>
+                            <div>
+                                <label for="">商品种类</label>
+                                <input type="text" name="goodstype">
+                            </div>
+                            <div>
+                                <label for="">商品售价</label>
+                                <input type="text" name="goodssellprice">
+                            </div>
+                            <div>
+                                <label for=""></label>
+                                <input type="submit" class="btn" id="edit-submit-btn"/>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!--        宝贝分类-->
+        <div id="goodsType" class="content">
+         <button class="addBtn">增加商品种类</button>
+            <div class="box">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>种类id</th>
+                            <th>种类名称</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody-goodsType"></tbody>
+                </table>
+            </div>
+        </div>
+<!--        我的购物车-->
+        <div id="myCar" class="content">
+            <button class="addBtn">增加购物车信息</button>
+            <div class="box">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>用户id</th>
+                        <th>商品id</th>
+                        <th>商品数量</th>
+                        <th>加入购物车日期</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody id="tbody-myCar"></tbody>
+                </table>
+            </div>
+        </div>
+<!--        我的订单-->
+        <div id="myOrder" class="content">
+            <button class="addBtn">增加订单信息</button>
+            <div class="box">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>订单id</th>
+                            <th>用户id</th>
+                            <th>收获信息id</th>
+                            <th>下单日期</th>
+                        </tr>
+                    </thead>
+                    <tbody id="order-tbody"></tbody>
+                </table>
+            </div>
+        </div>
+<!--        订单状态-->
+        <div id="orderDetail" class="content">
+            <div class="box">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>订单id</th>
+                            <th>商品id</th>
+                            <th>商品状态</th>
+                            <th>商品进价</th>
+                            <th>商品售价</th>
+                            <th>商品数量</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody-orderDeatil"></tbody>
+                </table>
+            </div>
+        </div>
+<!--        用户信息-->
+        <div id="userInfo" class="content">
+            <button class="addBtn">增加用户信息</button>
+            <div class="box">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>用户id</th>
+                        <th>用户姓名</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody id="user-tbody"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="./js/jquery-3.4.1.min.js"></script>
+<script src="js/data.js"></script>
+
+</body>
+</html>

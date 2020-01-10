@@ -1,0 +1,18 @@
+server:
+  port: 8764
+
+eureka:
+  instance:
+    hostname: localhost
+  server:
+    enable-self-preservation: false
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    serviceUrl:
+      defaultZone: http://localhost:8764/eureka/
+
+spring:
+  application:
+    name: eureka
+
